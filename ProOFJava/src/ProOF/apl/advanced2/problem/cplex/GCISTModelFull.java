@@ -5,6 +5,8 @@
  */
 package ProOF.apl.advanced2.problem.cplex;
 
+
+import ProOF.CplexExtended.CplexExtended;
 import ProOF.apl.advanced2.problem.GCISTInstance;
 import ProOF.com.Linker.LinkerApproaches;
 import ProOF.CplexOpt.CplexFull;
@@ -18,7 +20,9 @@ import ilog.concert.IloNumVar;
  */
 public class GCISTModelFull extends CplexFull{
     private GCISTInstance inst = new GCISTInstance();
+   
     
+    public CplexExtended cpx;
     private IloNumVar Yitk[][][];
     private IloNumVar Nitk[][][];
     private IloNumVar Zijtk[][][][];
@@ -32,7 +36,13 @@ public class GCISTModelFull extends CplexFull{
     private IloNumExpr ObjExSwap;
     private IloNumExpr ObjValue;
     
-    public GCISTModelFull() throws IloException {
+    /**
+     *
+     * @param cpx
+     * @throws IloException
+     */
+    public GCISTModelFull(CplexExtended cpx) throws IloException {
+        this.cpx = cpx;
         
     }
     @Override
@@ -48,6 +58,8 @@ public class GCISTModelFull extends CplexFull{
     @Override
     public void model() throws Exception {
         //--------------------------Definindo as variaveis ---------------------
+        
+        cpx = new CplexExtended();
         Yitk    = cpx.boolVarArray(inst.N, inst.T, inst.K, "Y");
         Nitk    = cpx.intVarArray(inst.N, inst.T, inst.K, 0, 10000,"N");
         Zijtk   = cpx.numVarArray(inst.N, inst.N, inst.T, inst.K, 0, 1, "Z"); 

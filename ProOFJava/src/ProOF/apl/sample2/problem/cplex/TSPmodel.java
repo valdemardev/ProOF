@@ -16,7 +16,8 @@ import ilog.concert.IloNumVar;
  */
 public class TSPmodel {
     public final TSPInstance inst;
-    public final CplexExtended cpx;  
+    CplexExtended cpx;
+    
     public IloNumVar Xij[][];   //binary relaxed
     public IloNumVar Ui[];
     

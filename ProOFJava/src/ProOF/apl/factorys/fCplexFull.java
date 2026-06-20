@@ -9,6 +9,7 @@ import ProOF.apl.advanced2.problem.cplex.GCISTModelFull;
 import ProOF.apl.advanced2.problem.cplex.MLCLSPwBFull;
 import ProOF.com.language.Factory;
 import ProOF.CplexOpt.CplexFull;
+import ProOF.apl.sample2.problem.cplex.PSPERFull;
 import ilog.concert.IloException;
 
 /**
@@ -27,8 +28,9 @@ public class fCplexFull extends Factory<CplexFull>{
     public CplexFull build(int index) throws IloException {
         switch(index){
             case 0: return new TSPFull();
-            case 1: return new GCISTModelFull();
+            case 1: return new GCISTModelFull(null);
             case 2: return new MLCLSPwBFull();
+            case 3: return new PSPERFull();
         }
         return null;
     }

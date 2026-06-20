@@ -5,6 +5,7 @@
  */
 package ProOF.apl.advanced2.problem.cplex;
 
+import ProOF.CplexExtended.CplexExtended;
 import ProOF.com.Linker.LinkerApproaches;
 import ProOF.com.Linker.LinkerResults;
 import ProOF.CplexOpt.CplexFull;
@@ -21,6 +22,7 @@ import ilog.cplex.IloCplex.Status;
 public class MLCLSPwBFull extends CplexFull{
     private MLCLSPwBInstance inst = new MLCLSPwBInstance();
     
+    public CplexExtended cpx;
     private IloNumVar Xit[][];
     private IloNumVar Sit[][];
     private IloNumVar Bit[][];
@@ -31,7 +33,7 @@ public class MLCLSPwBFull extends CplexFull{
     private IloNumExpr ObjValue;
     
     public MLCLSPwBFull() throws IloException {
-        
+           this.cpx = cpx;
     }
     @Override
     public String name() {

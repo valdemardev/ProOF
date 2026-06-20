@@ -8,6 +8,7 @@ package ProOF.apl.factorys;
 import ProOF.apl.advanced2.problem.RFFO.GCIST_RFFO;
 import ProOF.apl.advanced2.problem.RFFO.MLCLSPwB_RFFO;
 import ProOF.apl.advanced2.FMS.RFFO.RFFOModel;
+import ProOF.apl.sample2.problem.RFFO.PSPER_RFFO;
 import ProOF.apl.sample2.problem.RFFO.TSP_RFFO;
 import ProOF.com.language.Factory;
 
@@ -27,6 +28,7 @@ public class fRFFOModel extends Factory<RFFOModel>{
             case 0: return new TSP_RFFO();
             case 1: return new GCIST_RFFO();
             case 2: return new MLCLSPwB_RFFO();
+            case 3: return new PSPER_RFFO();
         }
         return null;
     }

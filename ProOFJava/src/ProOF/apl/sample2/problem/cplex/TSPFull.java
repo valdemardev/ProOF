@@ -4,6 +4,7 @@
  */
 package ProOF.apl.sample2.problem.cplex;
 
+import ProOF.CplexExtended.CplexExtended;
 import ProOF.apl.sample1.problem.TSP.TSPInstance;
 import ProOF.com.Linker.LinkerApproaches;
 import ProOF.CplexOpt.CplexFull;
